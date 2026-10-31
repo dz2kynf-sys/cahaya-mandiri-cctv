@@ -128,6 +128,15 @@ document.querySelectorAll("[data-package]").forEach((button) => {
   });
 });
 
+document.querySelectorAll("[data-service]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const serviceSelect = document.querySelector("#customer-service");
+    if (serviceSelect instanceof HTMLSelectElement) {
+      serviceSelect.value = link.dataset.service ?? "";
+    }
+  });
+});
+
 const bookingForm = document.querySelector("#booking-form");
 const bookingDate = document.querySelector("#customer-date");
 const formError = document.querySelector("#form-error");
