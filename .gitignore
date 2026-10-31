@@ -1,0 +1,6 @@
+node_modules/
+storage/*.sqlite
+storage/*.sqlite-shm
+storage/*.sqlite-wal
+dist/
+npm-debug.log*

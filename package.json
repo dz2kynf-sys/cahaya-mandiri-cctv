@@ -1,0 +1,17 @@
+{
+  "name": "cahaya-mandiri-cctv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website CV. Cahaya Mandiri dengan booking tanggal CCTV berbasis SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.21.2"
+  }
+}
