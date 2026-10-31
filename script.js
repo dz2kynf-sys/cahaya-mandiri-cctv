@@ -1,5 +1,48 @@
 const WHATSAPP_NUMBER = "6285135077771";
 
+const revealGroups = [
+  ".trust-grid > div",
+  ".section-heading",
+  ".service-card",
+  ".package-card",
+  ".calculator-copy, .calculator-card",
+  ".gallery-item",
+  ".process-item",
+  ".reviews-intro, .reviews-window",
+  ".booking-copy, .booking-form",
+  ".final-cta-inner",
+];
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if ("IntersectionObserver" in window && !motionPreference.matches) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -36px 0px" },
+  );
+
+  revealGroups.forEach((selector) => {
+    const groups = new Map();
+    document.querySelectorAll(selector).forEach((element) => {
+      const parent = element.parentElement;
+      if (!parent) return;
+      const order = groups.get(parent) ?? 0;
+      groups.set(parent, order + 1);
+      element.dataset.reveal = "";
+      element.style.setProperty("--reveal-order", String(order));
+      revealObserver.observe(element);
+    });
+  });
+
+  document.documentElement.classList.add("motion-ready");
+}
+
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
