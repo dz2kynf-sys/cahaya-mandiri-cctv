@@ -196,26 +196,26 @@ h1, h2 { font-family: var(--font-display); }
 .footer-bottom { min-height: 51px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #263244; color: #738090; font-size: 8px; }
 .floating-wa { position: fixed; z-index: 18; right: 22px; bottom: 22px; display: flex; gap: 8px; align-items: center; padding: 12px 15px; border: 1px solid #ffffff40; border-radius: 30px; color: #fff; background: #198d55; box-shadow: 0 6px 24px #0e201a44; font-size: 10px; font-weight: 700; transition: .2s; }.floating-wa:hover { transform: translateY(-2px); background: #147c4a; }.floating-wa svg { width: 19px; height: 19px; }
 
-.motion-ready [data-reveal] { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--reveal-order, 0) * 90ms); }
+.motion-ready [data-reveal] { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .85s ease, transform .85s cubic-bezier(.22,1,.36,1); transition-delay: calc(var(--reveal-order, 0) * 80ms); }
+.motion-ready [data-reveal="left"] { transform: translate3d(-38px, 8px, 0); }
+.motion-ready [data-reveal="right"] { transform: translate3d(38px, 8px, 0); }
 .motion-ready [data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
-.motion-ready .hero-content > .eyebrow,
-.motion-ready .hero-content > h1,
-.motion-ready .hero-content > .hero-description,
-.motion-ready .hero-content > .hero-actions,
-.motion-ready .hero-content > .hero-proof { animation: hero-enter .7s both cubic-bezier(.2,.7,.2,1); }
-.motion-ready .hero-content > h1 { animation-delay: .08s; }
-.motion-ready .hero-content > .hero-description { animation-delay: .16s; }
-.motion-ready .hero-content > .hero-actions { animation-delay: .24s; }
-.motion-ready .hero-content > .hero-proof { animation-delay: .32s; }
-.motion-ready .hero-image-frame { animation: hero-image-enter 1s both cubic-bezier(.2,.7,.2,1); }
+.motion-ready .hero-content > .eyebrow { animation: hero-from-left .8s both cubic-bezier(.22,1,.36,1); }
+.motion-ready .hero-content > h1 { animation: hero-from-right .9s .08s both cubic-bezier(.22,1,.36,1); }
+.motion-ready .hero-content > .hero-description { animation: hero-from-left .85s .16s both cubic-bezier(.22,1,.36,1); }
+.motion-ready .hero-content > .hero-actions { animation: hero-from-right .85s .24s both cubic-bezier(.22,1,.36,1); }
+.motion-ready .hero-content > .hero-proof { animation: hero-from-up .8s .32s both cubic-bezier(.22,1,.36,1); }
+.motion-ready .hero-image-frame { animation: hero-image-enter 1s both cubic-bezier(.22,1,.36,1); }
 .motion-ready .vision-card { animation: card-float 5s ease-in-out 1s infinite; }
 .live-dot { animation: status-pulse 2s ease-out infinite; }
 .service-card, .package-card { transition: transform .3s ease, box-shadow .3s ease, background .2s ease; }
 .service-card:hover, .package-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px #17223512; }
 .trust-icon, .service-icon { transition: transform .25s ease, background .25s ease; }
 .trust-grid > div:hover .trust-icon, .service-card:hover .service-icon { transform: translateY(-2px) scale(1.05); }
-@keyframes hero-enter { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
-@keyframes hero-image-enter { from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.985); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
+@keyframes hero-from-left { from { opacity: 0; transform: translate3d(-30px, 5px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes hero-from-right { from { opacity: 0; transform: translate3d(30px, 5px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes hero-from-up { from { opacity: 0; transform: translate3d(0, 14px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes hero-image-enter { from { opacity: 0; transform: translate3d(28px, 8px, 0) scale(.985); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
 @keyframes card-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes status-pulse { 0% { box-shadow: 0 0 0 0 #a9d93580; } 70%, 100% { box-shadow: 0 0 0 6px #a9d93500; } }
 
