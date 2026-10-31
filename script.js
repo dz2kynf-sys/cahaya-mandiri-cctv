@@ -188,14 +188,16 @@ bookingForm?.addEventListener("submit", async (event) => {
   const service = String(formData.get("service") ?? "").trim();
   const selectedPackage = String(formData.get("package") ?? "").trim() || "Belum tahu / konsultasi";
   const date = String(formData.get("date") ?? "").trim();
-  const location = String(formData.get("location") ?? "").trim();
+  const address = String(formData.get("location") ?? "").trim();
   const notes = String(formData.get("notes") ?? "").trim();
 
-  if (!name || !phone || !service || !location) {
+  if (!name || !phone || !service || !address) {
     formError.hidden = false;
     formError.textContent = "Mohon lengkapi semua kolom yang wajib diisi.";
     return;
   }
+
+  const location = `${address}, Kota Palembang, Sumatera Selatan`;
 
   const message = [
     isGitHubPagesDemo
