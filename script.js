@@ -198,7 +198,6 @@ bookingForm?.addEventListener("submit", async (event) => {
   }
 
   const location = `${address}, Kota Palembang, Sumatera Selatan`;
-
   const message = [
     isGitHubPagesDemo
       ? "Halo CV. Cahaya Mandiri, saya ingin mengajukan permintaan jadwal CCTV. Mohon konfirmasi apakah tanggal pilihan masih tersedia."
@@ -267,25 +266,6 @@ bookingForm?.addEventListener("submit", async (event) => {
     if (bookingSubmit instanceof HTMLButtonElement) bookingSubmit.disabled = false;
   }
 });
-
-const reviewsTrack = document.querySelector("#reviews-track");
-const reviewDots = Array.from(document.querySelectorAll("#review-dots button"));
-let activeReview = 0;
-
-function showReview(index) {
-  if (!reviewsTrack || reviewDots.length === 0) return;
-  activeReview = (index + reviewDots.length) % reviewDots.length;
-  reviewsTrack.style.transform = `translateX(-${activeReview * 100}%)`;
-  reviewDots.forEach((dot, dotIndex) => {
-    dot.classList.toggle("active", dotIndex === activeReview);
-    dot.setAttribute("aria-pressed", String(dotIndex === activeReview));
-  });
-}
-
-document.querySelector("#review-prev")?.addEventListener("click", () => showReview(activeReview - 1));
-document.querySelector("#review-next")?.addEventListener("click", () => showReview(activeReview + 1));
-reviewDots.forEach((dot, index) => dot.addEventListener("click", () => showReview(index)));
-showReview(0);
 
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
