@@ -80,6 +80,13 @@ app.post("/api/bookings", (request, response) => {
     return;
   }
 
+  if (!/,\s*Kota Palembang,\s*Sumatera Selatan$/i.test(booking.location)) {
+    response.status(400).json({
+      error: "Layanan booking hanya tersedia di Kota Palembang, Sumatera Selatan.",
+    });
+    return;
+  }
+
   if (
     booking.name.length > 120 ||
     booking.phone.length > 40 ||
