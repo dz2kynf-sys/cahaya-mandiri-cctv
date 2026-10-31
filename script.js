@@ -96,19 +96,13 @@ let availabilityRequestId = 0;
 let selectedDateAvailable = false;
 
 if (isGitHubPagesDemo) {
-  const demoNotice = document.querySelector("#github-demo-notice");
   const bookingHeading = bookingForm?.querySelector(".form-heading h3");
   const bookingPrivacy = bookingForm?.querySelector(".form-privacy");
 
-  if (demoNotice) {
-    demoNotice.textContent =
-      "Versi demo GitHub Pages tidak menyimpan jadwal. Ajukan tanggal lewat WhatsApp; jadwal baru pasti setelah dikonfirmasi CS.";
-    demoNotice.hidden = false;
-  }
   if (bookingHeading) bookingHeading.textContent = "Ajukan jadwal via WhatsApp";
   if (bookingPrivacy) {
     bookingPrivacy.textContent =
-      "Permintaan tanggal akan dikirim ke WhatsApp dan perlu dikonfirmasi CS. Tanggal belum dipesan melalui website.";
+      "Permintaan jadwal dikirim melalui WhatsApp. Jadwal berlaku setelah dikonfirmasi oleh CS.";
   }
 }
 
@@ -123,7 +117,7 @@ async function checkDateAvailability() {
 
   if (isGitHubPagesDemo) {
     selectedDateAvailable = true;
-    dateAvailability.textContent = "Jadwal akan dikonfirmasi melalui WhatsApp; website demo tidak menyimpan ketersediaan.";
+    dateAvailability.textContent = "Tanggal pilihan akan dikonfirmasi oleh CS melalui WhatsApp.";
     dateAvailability.dataset.state = "loading";
     return true;
   }
