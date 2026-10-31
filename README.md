@@ -26,6 +26,8 @@ Database otomatis dibuat di `storage/bookings.sqlite`. Untuk hosting, gunakan di
 
 ## Aturan booking
 
+Layanan pemasangan hanya tersedia di wilayah Kota Palembang, Sumatera Selatan. Formulir meminta alamat jalan dan otomatis mencantumkan Kota Palembang pada permintaan WhatsApp dan booking.
+
 Satu tanggal hanya dapat memiliki satu booking. Ketersediaan diperiksa saat tanggal dipilih dan dikunci kembali di database saat formulir dikirim, sehingga dua permintaan bersamaan tidak dapat mengambil tanggal yang sama. Permintaan yang berhasil disimpan akan membuka WhatsApp untuk konfirmasi lanjutan.
 
 Penyimpanan ini hanya mengunci tanggal, bukan jam atau kapasitas teknisi. Pembatalan dan pembukaan kembali tanggal penuh saat ini dilakukan dengan mengelola data booking di database.
