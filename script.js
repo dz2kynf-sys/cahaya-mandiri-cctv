@@ -61,6 +61,17 @@ mainNav?.querySelectorAll("a").forEach((link) => {
   });
 });
 
+const footerMenus = document.querySelectorAll(".footer-menu");
+const footerMenuBreakpoint = window.matchMedia("(max-width: 760px)");
+const syncFooterMenus = ({ matches }) => {
+  footerMenus.forEach((menu) => {
+    menu.open = !matches;
+  });
+};
+
+syncFooterMenus(footerMenuBreakpoint);
+footerMenuBreakpoint.addEventListener("change", syncFooterMenus);
+
 const calculatorForm = document.querySelector("#calculator-form");
 const cameraCount = document.querySelector("#camera-count");
 const cameraOutput = document.querySelector("#camera-output");
