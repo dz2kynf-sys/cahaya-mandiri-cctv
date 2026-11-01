@@ -15,8 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261101-service-form" />
-    <script src="script.js?v=20261101-service-form" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261101-footer-accordion" />
+    <script src="script.js?v=20261101-footer-accordion" defer></script>
   </head>
   <body>
     <div class="topbar">
@@ -225,7 +225,7 @@
         </div>
       </section>
 
-      <section class="section process-section">
+      <section class="section process-section" id="proses">
         <div class="container">
           <div class="section-heading centered-heading">
             <div class="eyebrow"><span class="eyebrow-line"></span> MUDAH, DARI AWAL <span class="eyebrow-line"></span></div>
@@ -316,9 +316,41 @@
           <p>Solusi keamanan CCTV yang profesional, rapi, dan dapat diandalkan untuk melindungi hal-hal yang paling berarti.</p>
           <a class="footer-wa" href="https://wa.me/6285135077771" target="_blank" rel="noopener noreferrer">◉ &nbsp; 0851-3507-7771</a>
         </div>
-        <div class="footer-links"><strong>NAVIGASI</strong><a href="#home">Beranda</a><a href="#layanan">Layanan</a><a href="#paket">Paket CCTV</a><a href="#galeri">Galeri Pemasangan</a></div>
-        <div class="footer-links"><strong>BANTUAN</strong><a href="#kalkulator">Kalkulator Estimasi</a><a href="#booking">Booking Jadwal</a><a href="#ulasan">Ulasan Pelanggan</a><a href="https://wa.me/6285135077771" target="_blank" rel="noopener noreferrer">Hubungi Customer Service</a></div>
-        <div class="footer-contact"><strong>JAM OPERASIONAL</strong><p>Senin – Sabtu<br />08.00 – 17.00 WIB</p><span><i></i> Siap membantu konsultasi</span></div>
+        <details class="footer-menu" open>
+          <summary>Tentang Kami</summary>
+          <div class="footer-menu-links">
+            <a href="#layanan">Keunggulan layanan</a>
+            <a href="#proses">Proses pemasangan</a>
+            <a href="#galeri">Galeri pemasangan</a>
+            <a href="#ulasan">Ulasan pelanggan</a>
+          </div>
+        </details>
+        <details class="footer-menu" open>
+          <summary>Layanan CCTV</summary>
+          <div class="footer-menu-links">
+            <a href="#booking" data-service="Instalasi CCTV">Instalasi CCTV</a>
+            <a href="#booking" data-service="Service / perbaikan CCTV">Service &amp; perbaikan</a>
+            <a href="#booking" data-service="Setting CCTV online">Setting CCTV online</a>
+            <a href="#layanan">Lihat semua layanan</a>
+          </div>
+        </details>
+        <details class="footer-menu" open>
+          <summary>Paket &amp; Estimasi</summary>
+          <div class="footer-menu-links">
+            <a href="#booking" data-package="Paket Essential (2 Kamera)">Paket Essential</a>
+            <a href="#booking" data-package="Paket Comfort (4 Kamera)">Paket Comfort</a>
+            <a href="#booking" data-package="Paket Business (8 Kamera)">Paket Business</a>
+            <a href="#kalkulator">Kalkulator estimasi</a>
+          </div>
+        </details>
+        <details class="footer-menu" open>
+          <summary>Bantuan &amp; Kontak</summary>
+          <div class="footer-menu-links">
+            <a href="#booking">Jadwalkan survey</a>
+            <a href="https://wa.me/6285135077771" target="_blank" rel="noopener noreferrer">Hubungi kami via WhatsApp</a>
+            <span>Senin – Sabtu, 08.00 – 17.00 WIB</span>
+          </div>
+        </details>
       </div>
       <div class="container footer-bottom"><span>© <span id="current-year">2026</span> CV. Cahaya Mandiri. Hak cipta dilindungi.</span><span>Solusi keamanan, untuk ketenangan Anda.</span></div>
     </footer>
